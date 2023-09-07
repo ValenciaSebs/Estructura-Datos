@@ -15,9 +15,7 @@ class Pila:
         self.superior = None
 
     def apilar(self, dato):
-        print(
-            f"Agregando {dato} en la cima de la pila"
-        )  # aqui imprimimos los datos almacendos que le pasamos como parametro
+        print(f"Agregando {dato} en la cima de la pila")  # aqui imprimimos los datos almacendos que le pasamos como parametro
         # Si no hay datos, agregamos el valor en el elemento superior y regresamos
         if self.superior == None:
             self.superior = Nodo(dato)
