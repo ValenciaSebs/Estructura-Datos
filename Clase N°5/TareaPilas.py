@@ -28,7 +28,7 @@ class Pila:
     def imprimir(self):
         print("Imprimiendo pila:")
         # Recorrer la pila e imprimir valores
-        nodo_temporal = (self.superior)  # nuevo objeto creado el cual le asignamos el valor del .superior, que vendria siendo la posicion superior en tood momento
+        nodo_temporal = (self.superior)  # nuevo objeto creado el cual le asignamos el valor del .superior, que vendria siendo la posicion superior en todo momento
         while nodo_temporal != None:
             print(f"{nodo_temporal.dato}", end=",")
             nodo_temporal = nodo_temporal.siguiente
