@@ -1,6 +1,9 @@
 # Para correr el servidor: uvicorn server:app --reload
 # se debe instalar uvicorn: pip install uvicorn
 # se debe instalar FastAPI: pip install fastapi
+#(pwd) => Donde se encuentra el sistema actualmente
+#(ls) => Lugares disponibles donde entrar
+#(cd Clase6) => Para que entre a la carpeta de clase6
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Union
@@ -11,7 +14,7 @@ cola = Cola()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Bienvenido al super sistema :D"}
 
 @app.get("/estado")
 def estado():
@@ -32,3 +35,12 @@ def desencolar():
 def ver_todos():
     elementos = cola.ver_listado()
     return {"status": "ok", "elementos": elementos}
+
+#Se crea una nueva solicitud al servidor para (eliminar) una solicitud accediendo al id del mensaje
+@app.delete("/eliminar/{mensaje_id}")
+def eliminar_mensaje(mensaje_id: int):
+    # Llama a la función de eliminar en la cola para eliminar el mensaje o solicitud
+    if cola.eliminar_mensaje(mensaje_id):
+        return {"status": "ok", "message": f"Mensaje con mensaje_id {mensaje_id} eliminado correctamente."}
+    else:
+        return {"status": "error", "message": f"No se encontró un mensaje con mensaje_id {mensaje_id}."}
