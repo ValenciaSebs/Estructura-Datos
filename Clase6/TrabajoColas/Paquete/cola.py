@@ -4,6 +4,7 @@ class Nodo:
     def __init__(self, valor: Item):
         self.valor = valor
         self.siguiente = None
+        
 
 class Cola:
     def __init__(self):

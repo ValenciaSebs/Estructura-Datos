@@ -4,7 +4,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Union
-from paquete.cola import Cola
+from Paquete.cola import Cola
 
 app = FastAPI()
 cola = Cola()
